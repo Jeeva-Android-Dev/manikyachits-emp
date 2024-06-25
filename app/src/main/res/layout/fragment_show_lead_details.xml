@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:windowSoftInputMode="adjustNothing"
+        android:theme="@style/AppTheme"
+        tools:context=".Fragments.Leads.Show_lead_details">
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="0sp" android:layout_height="0sp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                                     android:layout_height="match_parent">
+
+            <RelativeLayout
+                    android:id="@+id/layout_lead_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+
+                <TextView
+                        android:id="@+id/txt_groupname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:padding="4dp"
+                        android:text="@string/lead_detail"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"/>
+
+
+                <LinearLayout
+                        android:id="@+id/firstlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_groupname"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/customer_name"
+                                android:textColor="@color/grey_600"/>
+
+                        <TextView
+                                android:id="@+id/txt_sld_leadname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.1"/>
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_branch"
+                                android:textColor="@color/grey_600"/>
+
+                        <TextView
+                                android:id="@+id/txt_ald_branch"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.1"/>
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mobileno"
+                                android:textColor="@color/grey_600"/>
+
+                        <TextView
+                                android:id="@+id/txt_sld_mobileno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:textStyle="bold"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/secondlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/firstlayout"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="4dp"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_leadsgentdon"
+                                android:textColor="@color/grey_600"/>
+
+                        <TextView
+                                android:id="@+id/txt_sld_leadgenon"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.1"/>
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_al_emailoptional"
+                                android:textColor="@color/grey_600"/>
+
+                        <TextView
+                                android:id="@+id/txt_sld_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.1"/>
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/phoneno"
+                                android:textColor="@color/grey_600"/>
+
+                        <TextView
+                                android:id="@+id/txt_sld_phoneno"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:textStyle="bold"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/thirdlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/secondlayout"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="4dp"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_al_address1"
+                                android:textColor="@color/grey_600"/>
+
+                        <TextView
+                                android:id="@+id/txt_sld_address1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.1"/>
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_al_address2"
+                                android:textColor="@color/grey_600"/>
+
+                        <TextView
+                                android:id="@+id/txt_sld_address2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.1"/>
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:visibility="visible"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_nextfollowup"
+                                android:textColor="@color/grey_600"/>
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:textStyle="bold" android:id="@+id/txt_nextfollowup"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/followup_detail_title"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/sp8_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_lead_info">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey_600"
+                        android:text="@string/followupdetails"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginStart="@dimen/sp8_space"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="@dimen/sp8_space"
+                        android:text="@string/show_plus"
+                        android:textSize="@dimen/sp16_space"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" android:id="@+id/img_followup"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="0sp"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/sp8_space"
+                    android:layout_marginStart="@dimen/sp8_space"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/followup_detail_title" android:id="@+id/followup_layout"
+                    app:layout_constraintVertical_bias="0.0">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background_grey"
+                        android:gravity="center"
+                        android:minHeight="40dp"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:weightSum="3.6"
+                        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/table_header" android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                            android:id="@+id/txt_head_col1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/followup_date"
+                            android:textAlignment="textStart"
+                            android:textColor="?attr/colorPrimary"
+                           />
+                    <View android:layout_width="0sp" android:layout_height="match_parent"
+                          android:layout_weight="0.3"/>
+                    <TextView
+                            android:id="@+id/txt_head_col2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/followupstatus"
+                            android:textColor="?attr/colorPrimary"
+                            />
+                    <View android:layout_width="0sp" android:layout_height="match_parent"
+                          android:layout_weight="0.3"/>
+                    <TextView
+                            android:id="@+id/txt_head_col3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/folllowup_remark"
+                            android:textColor="?attr/colorPrimary"
+                           />
+                </LinearLayout>
+                <com.mazenet.mani.gurugubera.Utilities.NonScrollListView
+                        android:id="@+id/showleadsRecyclerview"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/table_header"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                    android:id="@+id/enroll_detail_title"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    android:layout_marginTop="@dimen/sp4_space"
+                    android:padding="@dimen/sp8_space"
+                    app:layout_constraintTop_toBottomOf="@+id/followup_layout">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey_600"
+                        android:text="@string/enrolldetails"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="@dimen/sp8_space"
+                        app:layout_constraintVertical_bias="0.0"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                           android:layout_marginEnd="@dimen/sp8_space"
+                           app:srcCompat="@drawable/ic_add_basecolor"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           android:text="@string/show_plus"
+                           android:textSize="@dimen/sp16_space"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" android:id="@+id/img_enroll"/>
+
+            </android.support.constraint.ConstraintLayout>
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="0sp"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/sp8_space"
+                    android:layout_marginStart="@dimen/sp8_space"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/enroll_detail_title" android:id="@+id/enrollment_layout"
+                    app:layout_constraintVertical_bias="0.0">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background_grey"
+                        android:gravity="center"
+                        android:minHeight="40dp"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:weightSum="3.6"
+                        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                        android:id="@+id/table_header1" android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/groupname"
+                            android:textAlignment="textStart"
+                            android:textColor="?attr/colorPrimary"/>
+                    <View android:layout_width="0sp" android:layout_height="match_parent"
+                          android:layout_weight="0.3"/>
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/collected"
+                            android:textColor="?attr/colorPrimary"
+                            />
+                    <View android:layout_width="0sp" android:layout_height="match_parent"
+                          android:layout_weight="0.3"/>
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:text="@string/tobecollected"
+                            android:textColor="?attr/colorPrimary"
+                        />
+                </LinearLayout>
+                <com.mazenet.mani.gurugubera.Utilities.NonScrollListView
+                        android:id="@+id/showenrollRecyclerview"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/table_header1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/fab_addleadfollowup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/sp16_space"
+            android:layout_marginBottom="@dimen/sp16_space">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textSize="@dimen/sp16_space"
+                  android:text="@string/str_al_addfollowup" app:layout_constraintEnd_toStartOf="@+id/fab_add_followup"
+                  android:textStyle="bold"
+                  app:layout_constraintTop_toTopOf="@+id/fab_add_followup"
+                  android:textColor="@color/colorPrimary"
+                  app:layout_constraintBottom_toBottomOf="@+id/fab_add_followup"/>
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_add_followup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom|end"
+                app:srcCompat="@drawable/ic_add"
+                app:elevation="@dimen/sp4_space"
+
+                app:pressedTranslationZ="8dp" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Fragments.Reports.collectionReport">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" app:layout_constraintTop_toBottomOf="@id/txt_filter"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" android:id="@+id/filter_layout">
+
+        <LinearLayout
+                android:id="@+id/filtercrumbs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/view_line_color"/>
+    </LinearLayout>
+    <EditText
+            android:id="@+id/edt_rep_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/box_white_sharp"
+            android:drawableLeft="@drawable/ic_search_black"
+            android:gravity="center"
+            android:hint="@string/searchere"
+            android:maxWidth="200dp"
+            android:minHeight="20sp"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_total"
+            app:layout_constraintTop_toTopOf="@id/txt_disp_total"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:minHeight="40dp"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/table_header"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toBottomOf="@+id/txt_total"
+            android:layout_marginTop="4dp">
+
+        <TextView
+                android:id="@+id/txt_cr_col1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/customer_name"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp14_space"/>
+
+        <View android:layout_width="0sp" android:layout_height="match_parent"
+              android:layout_weight="0.2"/>
+
+        <TextView
+                android:id="@+id/txt_cr_col2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:textAlignment="textStart"
+                android:text="@string/received"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp14_space"/>
+        <View android:layout_width="0sp" android:layout_height="match_parent"
+              android:layout_weight="0.2"/>
+        <TextView
+                android:id="@+id/txt_cr_col3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:textAlignment="textStart"
+                android:text="@string/paymenttype"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp14_space"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/recycler_collreports"
+       app:layout_constraintTop_toBottomOf="@+id/table_header"/>
+    <TextView
+            android:text="@string/str_selectbranch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView16" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:textColor="@color/colorBlack"/>
+    <TextView
+            android:text="@string/str_selectbranch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_sel_branch"
+            android:gravity="center"
+            android:elevation="@dimen/sp4_space"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" app:layout_constraintStart_toStartOf="@+id/textView16"
+            android:layout_marginTop="8dp"
+            android:drawableRight="@drawable/ic_spindown_black" android:drawablePadding="@dimen/sp4_space"
+            android:background="@drawable/filter_spinner" android:textColor="@color/colorBlack"/>
+    <TextView
+            android:text="@string/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_filter" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView16"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_sel_branch" android:background="@drawable/box_stroke"
+            android:gravity="center"
+            android:elevation="@dimen/sp4_space"
+            android:textColor="@color/colorBlack" android:drawableRight="@drawable/ic_filter"
+            android:drawablePadding="@dimen/sp8_space"/>
+    <TextView
+            android:text="@string/applied_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView17" android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/filter_layout"
+            app:layout_constraintStart_toStartOf="@+id/filter_layout" android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="@string/received"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_disp_total"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" app:layout_constraintStart_toStartOf="@+id/textView17"
+            android:layout_marginTop="16dp" android:textColor="@color/colorBlack"/>
+    <TextView
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_total" app:layout_constraintStart_toStartOf="@+id/txt_disp_total"
+            app:layout_constraintTop_toBottomOf="@+id/txt_disp_total"
+            android:textSize="@dimen/sp16_space"
+    />
+    <ImageView
+            android:id="@+id/imagerror"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:elevation="2sp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/recycler_collreports"
+            app:layout_constraintStart_toStartOf="@+id/recycler_collreports"
+            app:srcCompat="@drawable/ic_no_data_found"
+            app:layout_constraintTop_toTopOf="@+id/table_header"/>
+</android.support.constraint.ConstraintLayout>

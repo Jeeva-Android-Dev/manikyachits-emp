@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/AppTheme"
+        tools:context=".Fragments.Collection.CashinHand_Fragment">
+
+    <android.support.v4.widget.NestedScrollView
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/sp8_space"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageView
+                    app:srcCompat="@drawable/ic_refresh_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/sp8_space"
+                    android:id="@+id/btn_refresh"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="8dp" android:layout_marginEnd="16dp"/>
+            <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:weightSum="1"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.v7.widget.CardView
+                        android:id="@+id/cashlatyu"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.constraint.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="8sp"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:id="@+id/txt_ch_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:gravity="center"
+                                android:text="Cash in Hand"
+                                android:textColor="#000000"
+                                android:textSize="@dimen/sp16_space"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                                android:id="@+id/txt_cashnhand"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/colorWhite"
+                                android:editable="false"
+                                android:ems="10"
+                                android:focusable="false"
+                                android:text="0"
+                                android:textSize="@dimen/sp16_space"
+                                android:textAlignment="center"
+                                android:textColor="@color/red_400"
+                                app:layout_constraintEnd_toEndOf="@+id/txt_ch_title"
+                                app:layout_constraintStart_toStartOf="@+id/txt_ch_title"
+                                app:layout_constraintTop_toBottomOf="@+id/txt_ch_title"/>
+                    </android.support.constraint.ConstraintLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="0sp"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sp16_space"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                    android:id="@+id/layout_buttons" app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            >
+                <Button
+                        android:text="@string/settle_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_showsettlement"
+                        android:paddingLeft="@dimen/sp8_space"
+                        android:textSize="@dimen/sp14_space"
+                        android:paddingRight="@dimen/sp8_space"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:background="@color/colorPrimary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                <Button
+                        android:text="@string/view_gen_recpts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_viewgenrecpts"
+                        android:textSize="@dimen/sp14_space"
+                        android:paddingLeft="@dimen/sp8_space"
+                        android:paddingRight="@dimen/sp8_space"
+                        android:background="@color/colorPrimary"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+            </android.support.constraint.ConstraintLayout>
+            <Button
+                    android:text="@string/settle_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp14_space"
+                    android:id="@+id/btn_settleamount"
+                    android:background="@drawable/button_background"
+                    app:layout_constraintTop_toBottomOf="@+id/settlement_layout"
+                    app:layout_constraintStart_toStartOf="@+id/settlement_layout"
+                    app:layout_constraintEnd_toEndOf="@+id/settlement_layout"
+                    android:layout_marginBottom="@dimen/sp16_space"
+                    android:layout_marginTop="@dimen/sp16_space"
+                    android:padding="@dimen/sp8_space"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/layout_buttons"
+                    android:id="@+id/settlement_layout"
+                    android:layout_marginLeft="@dimen/sp8_space"
+                    android:layout_marginRight="@dimen/sp8_space"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/sp16_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+            >
+                <LinearLayout
+                        android:id="@+id/first"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="2"
+                >
+
+
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="1's" app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_weight="1"
+                            android:id="@+id/edt_1">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_1"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View android:layout_width="1sp" android:layout_height="match_parent"
+                          android:background="@color/grey_400"/>
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="50's"
+                            app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_weight="1"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            android:id="@+id/edt_50">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_50"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <View android:id="@+id/first_bottom"
+                      android:layout_width="match_parent"
+                      android:layout_height="1sp"
+                      android:background="@color/grey_400"
+                      android:visibility="gone"
+                      app:layout_constraintTop_toBottomOf="@+id/first"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                />
+                <LinearLayout
+                        android:id="@+id/second"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="2"
+                        app:layout_constraintTop_toBottomOf="@+id/first_bottom"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="2's"
+                            app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_weight="1"
+                            android:id="@+id/edt_2">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_2"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View android:layout_width="1sp" android:layout_height="match_parent"
+                          android:background="@color/grey_400"/>
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="100's"
+                            app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_weight="1"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            android:id="@+id/edt_100">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/sp14_space"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_100"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <View android:id="@+id/third_bottom"
+                      android:layout_width="match_parent" android:layout_height="1sp"
+                      android:background="@color/grey_400"
+                      android:visibility="gone"
+                      app:layout_constraintTop_toBottomOf="@+id/third"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                />
+                <LinearLayout
+                        android:id="@+id/fourth"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="2" app:layout_constraintTop_toBottomOf="@+id/third_bottom"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="10's"
+                            app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_weight="1"
+                            android:id="@+id/edt_10">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_10"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View android:layout_width="1sp" android:layout_height="match_parent"
+                          android:background="@color/grey_400"/>
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="500's"
+                            app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_weight="1"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            android:id="@+id/edt_500">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_500"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <View android:id="@+id/fourth_bottom"
+                      android:layout_width="match_parent" android:layout_height="1sp"
+                      android:background="@color/grey_400"
+                      android:visibility="gone"
+                      app:layout_constraintTop_toBottomOf="@+id/fourth"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                />
+                <LinearLayout
+                        android:id="@+id/fifth"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="2" app:layout_constraintTop_toBottomOf="@+id/fourth_bottom"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="20's"
+                            app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_weight="1"
+                            android:id="@+id/edt_20">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_20"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View android:layout_width="1sp" android:layout_height="match_parent"
+                          android:background="@color/grey_400"/>
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="1000's"
+
+                            app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_weight="1"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            android:id="@+id/edt_1000">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_1000"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <View android:id="@+id/fifth_bottom"
+                      android:layout_width="match_parent" android:layout_height="1sp"
+                      android:background="@color/grey_400"
+                      android:visibility="gone"
+                      app:layout_constraintTop_toBottomOf="@+id/fifth"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                />
+                <LinearLayout
+                        android:id="@+id/sixth"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="2" app:layout_constraintTop_toBottomOf="@+id/fifth_bottom"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/other_charges"
+                            app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_weight="1"
+                            android:id="@+id/edt_others">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_othercharges"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View android:layout_width="1sp" android:layout_height="match_parent"
+                          android:background="@color/grey_400"/>
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="2000's"
+                            app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_weight="1"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            android:id="@+id/edt_2000">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_2000"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <View android:id="@+id/second_bottom"
+                      android:layout_width="match_parent" android:layout_height="1sp"
+                      android:background="@color/grey_400"
+                      android:visibility="gone"
+                      app:layout_constraintTop_toBottomOf="@+id/second"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"/>
+                <LinearLayout
+                        android:id="@+id/third"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="2" app:layout_constraintTop_toBottomOf="@+id/second_bottom"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="5's" app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_weight="1"
+                            android:id="@+id/edt_5">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_5"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                    <View android:layout_width="1sp" android:layout_height="match_parent"
+                          android:background="@color/grey_400"/>
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="200's" app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_weight="1"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            android:id="@+id/edt_200">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:id="@+id/edt_ch_200"
+                                android:textSize="@dimen/sp14_space"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+                <View android:id="@+id/sixth_bottom"
+                      android:layout_width="match_parent" android:layout_height="1sp"
+                      android:visibility="gone"
+                      android:background="@color/grey_400"
+                      app:layout_constraintTop_toBottomOf="@+id/sixth"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                />
+                <LinearLayout
+                        android:id="@+id/seventh"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="1" app:layout_constraintTop_toBottomOf="@+id/sixth_bottom"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                    <android.support.design.widget.TextInputLayout
+                            android:layout_width="0sp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/total"
+                            android:layout_marginTop="8dp"
+                            android:focusable="false" app:layout_constraintTop_toBottomOf="@+id/edt_al_branch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_weight="1">
+
+                        <android.support.design.widget.TextInputEditText
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorBlack"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:textSize="@dimen/sp14_space"
+                                android:id="@+id/edt_ch_total"
+                                android:inputType="number"/>
+
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/eightth"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="1"
+                        android:layout_marginTop="@dimen/sp8_space"
+                        app:layout_constraintTop_toBottomOf="@+id/seventh"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                    <EditText
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorBlack"
+                            android:id="@+id/edt_ch_remarks"
+                            android:textSize="@dimen/sp14_space"
+                            android:hint="@string/str_ln_remarks"
+                            android:inputType="text"/>
+
+
+                </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

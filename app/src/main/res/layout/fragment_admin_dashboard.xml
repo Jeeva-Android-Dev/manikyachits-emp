@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_grey"
+        android:theme="@style/AppTheme"
+        tools:context=".Fragments.dashboard_fragments.Admin_Dashboard">
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/ref_adm_dashboard"
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <Button
+                    android:id="@+id/spn_branch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/spinner_box"
+                    android:drawableRight="@drawable/ic_spindown_black"
+                    android:gravity="center_vertical"
+                    android:hint="@string/str_selectbranch"
+                    android:minHeight="@dimen/spinner_minheight"
+                    android:editable="false"
+                    android:textSize="@dimen/regular_text_size"
+                    android:textAlignment="gravity"
+                    android:elevation="@dimen/sp4_space"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginTop="@dimen/sp16_space"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+            <android.support.v4.widget.NestedScrollView
+                    android:layout_width="0sp"
+                    android:layout_height="0sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:scrollbars="none">
+
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <android.support.constraint.ConstraintLayout
+                            android:id="@+id/target_collected_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="@dimen/dashboard_firstcard_space"
+                            android:background="@drawable/dashboard_card_backgroud">
+
+                        <TextView
+                                android:id="@+id/target_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_targetvscollected"
+                                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="@dimen/sp8_space"
+                                android:layout_marginStart="@dimen/sp8_space"
+                                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/sp8_space"
+                                android:padding="@dimen/sp8_space"
+                                android:layout_marginRight="@dimen/sp8_space"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/dashboard_text_size"/>
+
+                        <View
+                                android:id="@+id/view_targetbelow" android:layout_width="match_parent"
+                                android:layout_height="@dimen/view_line_size"
+                                android:background="@color/view_line_color"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/target_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_marginTop="4sp"/>
+
+                        <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/target_collected_pie"
+                                android:padding="@dimen/sp16_space"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dashboard_targetcollected_size"
+                                app:layout_constraintTop_toBottomOf="@id/view_targetbelow"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <android.support.constraint.ConstraintLayout
+
+                            android:id="@+id/devices_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dashboard_devices_size"
+                            app:layout_constraintTop_toBottomOf="@+id/target_collected_layout"
+                            android:layout_marginTop="@dimen/dashboard_card_space"
+                            android:background="@drawable/dashboard_card_backgroud"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                        <android.support.constraint.ConstraintLayout
+                                android:id="@+id/device_titile_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="@dimen/sp8_space"
+                                android:layout_marginStart="@dimen/sp8_space"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_marginEnd="@dimen/sp8_space">
+                            <TextView
+                                    android:id="@+id/device_titile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/str_totaldevices"
+                                    android:padding="@dimen/sp8_space"
+                                    android:gravity="left"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="@dimen/dashboard_text_size"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            <TextView
+                                    android:id="@+id/txt_totaldevices"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="0"
+                                    android:textSize="@dimen/dashboard_text_size"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    app:layout_constraintEnd_toStartOf="@id/totaldevice_arrow"
+                                    android:layout_marginRight="@dimen/sp8_space"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"/>
+
+                            <ImageView
+                                    android:id="@+id/totaldevice_arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:srcCompat="@drawable/ic_rightarrow"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                            />
+
+                        </android.support.constraint.ConstraintLayout>
+
+
+                        <View
+                                android:id="@+id/view_devicebelow" android:layout_width="match_parent"
+                                android:layout_height="@dimen/view_line_size"
+                                android:background="@color/view_line_color"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/device_titile_layout"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_marginTop="4sp"/>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/view_devicebelow"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                android:orientation="horizontal">
+
+                            <LinearLayout
+                                    android:layout_width="0sp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:padding="@dimen/sp16_space"
+                                    android:orientation="vertical">
+
+                                <TextView
+                                        android:id="@+id/txt_activedevices"
+                                        android:layout_width="wrap_content" android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="0"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="@dimen/dashboard_text_size"
+                                        android:textAlignment="viewStart"
+                                />
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/str_activedevices"
+                                        android:textColor="@color/textview_color"
+                                        android:textSize="@dimen/regular_text_size"
+                                        android:textAlignment="viewStart"
+                                />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:layout_width="0sp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:padding="@dimen/sp16_space"
+                                    android:orientation="vertical">
+
+                                <TextView
+                                        android:id="@+id/txt_inactivdevices"
+                                        android:layout_width="wrap_content" android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="0"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="@dimen/dashboard_text_size"
+                                        android:textAlignment="viewStart"
+                                />
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/str_inactivedevices"
+                                        android:textColor="@color/textview_color"
+                                        android:textSize="@dimen/regular_text_size"
+                                        android:textAlignment="viewStart"
+                                />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </android.support.constraint.ConstraintLayout>
+                    <android.support.constraint.ConstraintLayout
+                            android:id="@+id/target_dayclosing_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintTop_toBottomOf="@+id/devices_layout"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginBottom="@dimen/sp16_space"
+                            android:layout_marginTop="@dimen/dashboard_card_space"
+                            android:background="@drawable/dashboard_card_backgroud">
+
+                        <TextView
+                                android:id="@+id/dayclosing_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_todaycollection"
+                                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                                android:layout_marginLeft="@dimen/sp8_space"
+                                android:layout_marginStart="@dimen/sp8_space"
+                                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/sp8_space"
+                                android:padding="@dimen/sp8_space"
+                                android:layout_marginRight="@dimen/sp8_space"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="@dimen/dashboard_text_size"/>
+
+                        <View
+                                android:id="@+id/view_dayclosingbelow" android:layout_width="match_parent"
+                                android:layout_height="@dimen/view_line_size"
+                                android:background="@color/view_line_color"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/dayclosing_text"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                android:layout_marginTop="4sp"/>
+
+                        <com.github.mikephil.charting.charts.PieChart
+                                android:id="@+id/dayclosing_pie"
+                                android:layout_width="match_parent"
+                                android:padding="@dimen/sp16_space"
+                                android:layout_height="@dimen/dashboard_targetcollected_size"
+                                app:layout_constraintTop_toBottomOf="@id/view_dayclosingbelow"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.constraint.ConstraintLayout>
+
+
+            </android.support.v4.widget.NestedScrollView>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</android.support.constraint.ConstraintLayout>

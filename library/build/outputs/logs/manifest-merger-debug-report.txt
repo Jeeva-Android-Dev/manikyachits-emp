@@ -1,0 +1,49 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:1-14:12
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:1-14:12
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:1-14:12
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:1-14:12
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:1-14:12
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:1-14:12
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:1-14:12
+	package
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:3:11-56
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:1-14:12
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:70-116
+	android:versionCode
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:1-14:12
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:6:5-12:19
+	android:label
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:9:9-41
+	android:icon
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:8:9-45
+	android:allowBackup
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:7:9-35
+	android:theme
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml:10:9-40
+uses-sdk
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+		ADDED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml
+		INJECTED from D:\chit projects\Manikya chits\Catalyst_chit_Employee_app\library\AndroidManifest.xml

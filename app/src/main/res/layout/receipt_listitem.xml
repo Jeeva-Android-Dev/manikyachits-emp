@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:tag="listitem"
+        android:paddingTop="@dimen/sp8_space"
+        android:paddingBottom="@dimen/sp8_space"
+        android:paddingLeft="@dimen/sp4_space"
+        android:paddingRight="@dimen/sp4_space"
+        android:weightSum="3">
+
+
+    <TextView
+            android:text="Name"
+            android:layout_width="0sp"
+            android:layout_height="@dimen/sp36_space" android:id="@+id/txt_auctionno" android:layout_weight="1"
+            android:textColor="@color/teal_400"
+            android:textStyle="bold"
+            android:padding="@dimen/sp4_space"
+            android:gravity="left|center_vertical"
+            android:tag="custname"
+            android:textSize="@dimen/sp18_space"/>
+
+    <View android:layout_width="0sp" android:layout_height="wrap_content"
+          android:layout_weight="0.2"/>
+    <TextView
+            android:text="received"
+            android:layout_width="0sp"
+            android:layout_height="@dimen/sp36_space" android:id="@+id/txt_coll_collected" android:layout_weight="0.8"
+            android:gravity="left|center_vertical"
+            android:textSize="@dimen/sp16_space"/>
+    <View android:layout_width="0sp" android:layout_height="wrap_content"
+          android:layout_weight="0.2"/>
+    <TextView
+            android:text="paytype"
+            android:layout_width="0sp"
+            android:layout_height="@dimen/sp36_space"
+            android:gravity="left|center_vertical"
+            android:id="@+id/txt_coll_tobecollected" android:layout_weight="0.8"
+            android:textSize="@dimen/sp16_space"/>
+
+</LinearLayout>

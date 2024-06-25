@@ -1,0 +1,2518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <ScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <android.support.constraint.ConstraintLayout
+                android:id="@+id/topplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:id="@+id/filterlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                        android:id="@+id/branchlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp">
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/sp16_space"
+                                android:text="Branch"/>
+
+                        <TextView
+                                android:id="@+id/spn_branch"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/spinner_box"
+                                android:clickable="false"
+                                android:drawableRight="@drawable/ic_spindown_black"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="Select Branch"
+                                android:minHeight="30sp"
+                                android:textSize="@dimen/sp16_space"
+                                android:padding="4dp"
+                                android:textAlignment="center"
+                                android:textColor="#222"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/sp16_space"
+                                android:text="Date"/>
+
+                        <TextView
+                                android:id="@+id/spn_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="8dp"
+                                android:background="@drawable/spinner_box"
+                                android:clickable="false"
+                                android:drawableRight="@drawable/ic_spindown_black"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="Select Date"
+                                android:minHeight="30sp"
+                                android:textSize="@dimen/sp16_space"
+                                android:padding="4dp"
+                                android:textColor="#222"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/detailpage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    android:padding="4dp" app:layout_constraintTop_toBottomOf="@+id/filterlay">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Cash Collections"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cash Collection"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t1cashcollection"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cash Penalty"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t1cashpenaulty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cash Advance"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t1AdvanceCashAgainstCustomer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Advance Cash Against Enrollment"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t1AdvanceCashAgainstEnrollment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp" android:visibility="gone">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bonus Amount Cash"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t1BonusAmountCash"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Charges Cash"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t1OtherChargesCash"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Cash"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/t1totalCash"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Bank Payments"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Cheque Collections"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cheque Received"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t2ChequeReceived"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cleared Cheque"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t2ClearedCheque"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cheque Advance"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t2AdvanceChequeAgainstCustomer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Advance Cheque Against Enrollment"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t2AdvanceChequeAgainstEnrollment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cheque Penalty"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t2ChequePenaulty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp" android:visibility="gone">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bonus Amount Cheque"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t2BonusAmountCheque"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cleared Cheque Penalty"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t21clearedCheque"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Charges Cheque"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t2OtherChargesCheque"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Cheque"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/t2TotalCheque"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="NEFT Collections"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="NEFT Collection"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t3NEFTCollection"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:text="NEFT Penalty"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t3NEFTPenaulty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="NEFT Advance"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t3AdvanceNEFTAgainstCustomer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Advance NEFT Against Enrollment"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t3AdvanceNEFTAgainstEnrollment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp" android:visibility="gone">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bonus Amount NEFT"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t3BonusAmountNEFT"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Charges NEFT"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t3OtherChargesNEFT"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total NEFT or RTGS Amount"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/t3TotalNEFTorRTGSAmount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="DD Collections"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="DD Collection"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t4DDCollection"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="DD Penalty"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t4DDPenaulty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="DD Advance"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t4AdvanceDDAgainstCustomer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Advance DD Against Enrollment"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t4AdvanceCashAgainstEnrollment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Charges DD"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t4OtherChargesDD"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total DD Amount"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/t4TotalDDAmount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Card Collections"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Card Collection"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t5CardCollection"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Card Penalty"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t5CardPenalty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Card Advance"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t5AdvanceviaCardAgainstCustomer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Advance via Card Against Enrollment"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t5AdvanceviaCardAgainstEnrollment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Card Amount"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/t5TotalCardAmount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Adjustments"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Adjusted Amount against customer"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t6AdjustedAmountagainstcustomer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Adjusted Amount against Enrollment"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t6AdjustedAmountagainstEnrollment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Adjusted Penalty against Customer"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t6AdjustedPenaultyagainstCustomer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="20sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Adjusted Penalty against Enrollment"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t6AdjustedPenaultyagainstEnrollment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bid Payment Adjustment"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t6BidPaymentAdjustment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bid Adjustmnet penalty"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t6BidAdjustmnetpenaulty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp" android:visibility="gone">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bid Adjustment Bonus"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t6BidAdjustmnetBonus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bonus for Advance against Customer"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t6BonusforAdvanceagainstCustomer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:background="#ccc"/>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp" android:visibility="gone">
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Bonus for Advance against Enrollment"
+                            android:textColor="#555"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t6BonusforAdvanceagainstEnrollment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Adjustment Amount"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                    <TextView
+                            android:id="@+id/t6TotalAdjustmentAmount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Return Amounts"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Returned Amount against Customer"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t7ReturnedAmountagainstCustomer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Returned Amount against Enrollment"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t7ReturnedAmountagainstEnrollment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Returned Amount"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t7ReturnedAmountTotal"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Payments"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cash Payment"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t8CashPayment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cheque Payment"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t8ChequePayment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Card Payment"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t8CardPayment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="DD Payment"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t8DDPayment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="NEFT/RTGS Payment"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t8NeftPayment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Payment"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t8TotalPayment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Other Branch Collections"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch Cash Collection"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchCashCollection"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch Cheque Collection"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchChequeCollection"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch Cash Penalty"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchCashPenaulty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch Cheque Penalty"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchChequepenaulty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch DD Collection"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchDDCollection"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch DD Penalty"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchDDPenalty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch NEFT Collection"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchNeftColelction"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch NEFT Penalty"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchNeftPenalty"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp" android:visibility="gone">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch Cash Bonus"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchCashBonus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp" android:visibility="gone">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch Cheque Bonus"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9OtherBranchChequeBonus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc" android:visibility="gone"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch Enrollment against Cash"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9Otherenrolmentcash"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch Enrollment against cheque"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9Otherenrolmentcheque"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:visibility="gone"
+                        android:background="#ccc"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+
+                    <TextView
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other Branch Enrollment against NEFT"
+                            android:textSize="16sp"/>
+
+                    <TextView
+                            android:id="@+id/t9Otherenrolmentneft"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:text="0"
+                            android:textAlignment="textEnd"
+                            android:textColor="#222"
+                            android:textSize="16sp"/>
+
+                </LinearLayout>
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="#ccc"/>-->
+
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

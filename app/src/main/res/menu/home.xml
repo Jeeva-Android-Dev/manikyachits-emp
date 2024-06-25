@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:title="Filter"
+            android:icon="@drawable/ic_filter"
+            android:visible="false"
+            app:showAsAction="always"
+            android:id="@+id/filter"/>
+    <item android:id="@+id/menu_notification"
+          android:title="@string/str_notification"
+          android:orderInCategory="100"
+          app:showAsAction="always"
+          android:enabled="false"
+          android:icon="@drawable/ic_notifications"/>
+    <item
+            android:title="Search"
+            android:icon="@drawable/ic_search"
+            android:visible="false"
+            app:showAsAction="always"
+            android:id="@+id/search"/>
+    <item
+            android:title="Refresh"
+            android:icon="@drawable/ic_refresh"
+            android:visible="false"
+            app:showAsAction="always"
+            android:id="@+id/refresh"/>
+</menu>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:showIn="navigation_view"
+      android:theme="@style/AppTheme">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_dashboard"
+                android:icon="@drawable/ic_dashboard"
+                android:title="Dashboard"/>
+        <item
+            android:id="@+id/nav_add_customer"
+            android:icon="@drawable/ic_add_customer"
+            android:title="Add Customer"/>
+        <item
+                android:id="@+id/nav_collection"
+                android:icon="@drawable/ic_collections"
+                android:title="Collection"/>
+
+
+        <item
+                android:id="@+id/nav_reports"
+                android:icon="@drawable/ic_reports"
+                android:title="Reports"/>
+        <item
+                android:id="@+id/nav_devices"
+                android:icon="@drawable/ic_devices"
+                android:title="Devices"/>
+        <item
+                android:id="@+id/nav_leads"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Leads"/>
+
+        <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="Settings"/>
+        <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout"/>
+        <item
+            android:id="@+id/nav_version"
+            android:title="App Version :"/>
+    </group>
+
+
+
+</menu>

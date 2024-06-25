@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context=".Fragments.Devices.deviceUsers">
+    <Button
+            android:id="@+id/spn_showdusers_branch"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_box"
+            android:drawableRight="@drawable/ic_spindown_black"
+            android:gravity="center_vertical"
+            android:hint="@string/str_selectbranch"
+            android:minHeight="@dimen/spinner_minheight"
+            android:editable="false"
+            android:textSize="@dimen/regular_text_size"
+            android:textAlignment="gravity"
+            android:elevation="@dimen/sp4_space"
+            android:textColor="@android:color/tertiary_text_dark"
+            android:layout_marginTop="@dimen/sp16_space"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/checkBox_su_branch"/>
+
+    <android.support.constraint.ConstraintLayout
+
+            android:id="@+id/devices_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dashboard_devices_size"
+            app:layout_constraintTop_toBottomOf="@+id/spn_showdusers_branch"
+            android:layout_marginTop="@dimen/dashboard_card_space"
+            android:background="@drawable/dashboard_card_backgroud"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+                android:id="@+id/device_titile_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="@dimen/sp8_space"
+                android:layout_marginStart="@dimen/sp8_space"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/sp8_space">
+            <TextView
+                    android:id="@+id/device_titile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_totalusers"
+                    android:padding="@dimen/sp8_space"
+                    android:gravity="left"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/dashboard_text_size"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                    android:id="@+id/txt_su_totaldevices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="@dimen/dashboard_text_size"
+                    android:textColor="@color/colorPrimaryDark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="@dimen/sp8_space"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <View
+                android:id="@+id/view_devicebelow" android:layout_width="match_parent"
+                android:layout_height="@dimen/view_line_size"
+                android:background="@color/view_line_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/device_titile_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="4sp"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_devicebelow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/sp16_space"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/txt_su_activeusers"
+                        android:layout_width="wrap_content" android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/dashboard_text_size"
+                        android:textAlignment="viewStart"
+                />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/str_activedusers"
+                        android:textColor="@color/textview_color"
+                        android:textSize="@dimen/regular_text_size"
+                        android:textAlignment="viewStart"
+                />
+
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="@dimen/sp16_space"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/txt_su_inactiveusers"
+                        android:layout_width="wrap_content" android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/dashboard_text_size"
+                        android:textAlignment="viewStart"
+                />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/str_inactiveusers"
+                        android:textColor="@color/textview_color"
+                        android:textSize="@dimen/regular_text_size"
+                        android:textAlignment="viewStart"
+                />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <EditText
+            android:id="@+id/edt_du_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:background="@drawable/box_white_sharp"
+            android:drawableLeft="@drawable/ic_search_black"
+            android:gravity="center"
+            android:hint="@string/searchere"
+            android:maxWidth="200dp"
+            android:minHeight="20sp"
+            android:textSize="14sp"
+            android:singleLine="true" android:layout_marginEnd="8dp" app:layout_constraintTop_toBottomOf="@+id/devices_layout"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:minHeight="40dp"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/sp8_space"
+            app:layout_constraintTop_toBottomOf="@+id/edt_du_search"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/table_header">
+
+        <TextView
+                android:id="@+id/txt_su_subscribername"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="left"
+                android:text="@string/user_name"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"/>
+
+        <TextView
+                android:id="@+id/txt_su_leadgeneratedon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:gravity="left"
+                android:text="@string/status"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"/>
+
+        <TextView
+                android:id="@+id/txt_su_followupdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/showUsers"
+            android:layout_width="0sp"
+            android:layout_height="0sp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/table_header" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox_su_branch" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="@+id/spn_showdusers_branch"
+            app:layout_constraintBottom_toBottomOf="@+id/spn_showdusers_branch"/>
+
+</android.support.constraint.ConstraintLayout>

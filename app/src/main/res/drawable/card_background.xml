@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <padding
+        android:top="@dimen/sp8_space"
+        android:bottom="@dimen/sp8_space"
+        android:right="@dimen/sp8_space"
+        android:left="@dimen/sp8_space"/>
+
+    <corners android:radius="@dimen/sp4_space"/>
+
+    <solid android:color="@color/cardview_light_background"/>
+
+
+</shape>

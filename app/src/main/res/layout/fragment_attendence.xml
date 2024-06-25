@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_group_2" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attendance"
+                android:fontFamily="@font/robotoblack"
+                android:textSize="@dimen/_6ssp"
+                android:textAllCaps="true"
+                app:layout_constraintBottom_toTopOf="@+id/imageView12"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:srcCompat="@drawable/attendencelogo" />
+
+            <Button
+                android:id="@+id/btn_att_present"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/btnbackground"
+                android:drawableLeft="@drawable/ic_group_4"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/robotoblack"
+                android:paddingLeft="@dimen/_6ssp"
+                android:paddingRight="@dimen/_6ssp"
+                android:text="@string/Present"
+                app:layout_constraintEnd_toEndOf="@+id/guideline9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+            <Button
+                android:id="@+id/btn_att_absent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/abbtn"
+                android:drawableLeft="@drawable/ic_path_5"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/robotoblack"
+                android:paddingLeft="@dimen/_6ssp"
+                android:paddingRight="@dimen/_6ssp"
+                android:text="@string/Absent"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_att_present"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline9"
+                app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/session"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_att_absent">
+
+                <CheckBox
+                    android:id="@+id/morningcheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawablePadding="10dp"
+                    android:text="Morning"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/afternooncheck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Afternoon"
+                    app:layout_constraintStart_toStartOf="@+id/morningcheck"
+                    app:layout_constraintTop_toBottomOf="@+id/morningcheck" />
+
+                <EditText
+                    android:id="@+id/Reasonforleave"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/remarks_box"
+                    android:gravity="left"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:hint="Reason"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/afternooncheck" />
+
+                <Button
+                    android:id="@+id/btn_att_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/absubmit"
+                    android:fontFamily="@font/robotoblack"
+                    android:paddingLeft="@dimen/_20ssp"
+                    android:paddingRight="@dimen/_20ssp"
+                    android:text="@string/Submit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/Reasonforleave"
+                    app:layout_constraintStart_toStartOf="@+id/Reasonforleave"
+                    app:layout_constraintTop_toBottomOf="@+id/Reasonforleave" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

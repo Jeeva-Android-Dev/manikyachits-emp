@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Catalyst_chit_Employee_app.iml" filepath="$PROJECT_DIR$/.idea/modules/Catalyst_chit_Employee_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/Catalyst_chit_Employee_app.MPChartLib.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/Catalyst_chit_Employee_app.MPChartLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Catalyst_chit_Employee_app.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Catalyst_chit_Employee_app.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Catalyst_chit_Employee_app.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Catalyst_chit_Employee_app.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Catalyst_chit_Employee_app.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Catalyst_chit_Employee_app.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Catalyst_chit_Employee_app.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Catalyst_chit_Employee_app.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cloudpossdk-1.5.2.43/Catalyst_chit_Employee_app.cloudpossdk-1.5.2.43.iml" filepath="$PROJECT_DIR$/.idea/modules/cloudpossdk-1.5.2.43/Catalyst_chit_Employee_app.cloudpossdk-1.5.2.43.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Catalyst_chit_Employee_app.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Catalyst_chit_Employee_app.library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Catalyst_chit_Employee_app.library.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Catalyst_chit_Employee_app.library.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Catalyst_chit_Employee_app.library.main.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Catalyst_chit_Employee_app.library.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/Catalyst_chit_Employee_app.library.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/library/Catalyst_chit_Employee_app.library.unitTest.iml" />
+    </modules>
+  </component>
+</project>

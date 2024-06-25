@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Fragments.Collection.ReceiptFragment">
+
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fillViewport="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="fill_vertical"
+    >
+        <FrameLayout android:layout_width="match_parent"
+                     android:layout_height="wrap_content">
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_rf_custname"
+                        android:textSize="@dimen/sp16_space"
+                        app:layout_constraintEnd_toStartOf="@+id/txt_rf_receiptdate"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="8dp"
+                        android:maxLines="3"
+                        android:layout_marginEnd="@dimen/sp16_space"
+                        app:layout_constraintTop_toTopOf="@+id/txt_rf_receiptdate"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_rf_receiptdate"/>
+                <Button
+                        android:text="date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/txt_rf_receiptdate"
+                        android:textSize="@dimen/sp14_space"
+                        android:elevation="@dimen/sp4_space"
+                        android:drawableLeft="@drawable/ic_date_range_white"
+                        android:drawablePadding="@dimen/sp4_space"
+                        android:background="@drawable/button_background"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"/>
+
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/Recycler_receipts"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="@dimen/sp16_space"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_rf_custname"/>
+                <LinearLayout
+                        android:id="@+id/installment_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Recycler_receipts"
+                        android:layout_marginEnd="8dp">
+
+                    <HorizontalScrollView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.1"
+                            android:fillViewport="true"
+                            android:scrollbars="none"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            <LinearLayout
+                                    android:id="@+id/backgroudy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/colorPrimary"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                <TextView
+                                        android:id="@+id/txt_rf_auction"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:paddingTop="4dp"
+                                        android:paddingBottom="4dp"
+                                        android:text="@string/auctionno"
+                                        android:layout_marginLeft="4dp"
+                                        android:layout_marginRight="4dp"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/sp14_space"/>
+
+                                <TextView
+                                        android:id="@+id/txt_rf_pendind"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:paddingTop="4dp"
+                                        android:paddingBottom="4dp"
+                                        android:textAlignment="center"
+                                        android:text="@string/pending"
+                                        android:layout_marginLeft="4dp"
+                                        android:layout_marginRight="4dp"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/sp14_space"/>
+                                <View android:layout_width="0sp" android:layout_height="match_parent"
+                                      android:layout_weight="0.2"
+                                />
+                                <TextView
+                                        android:id="@+id/txt_rf_penalty"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:textAlignment="center"
+                                        android:layout_marginLeft="4dp"
+                                        android:paddingTop="4dp"
+                                        android:paddingBottom="4dp"
+                                        android:layout_marginRight="4dp"
+                                        android:text="@string/penalty"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/sp14_space"/>
+                                <View android:layout_width="0sp" android:layout_height="match_parent"
+                                      android:layout_weight="0.2"
+                                />
+                                <TextView
+                                        android:id="@+id/txt_rf_bonus"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:textAlignment="center"
+                                        android:text="@string/bonus"
+                                        android:layout_marginLeft="4dp"
+                                        android:paddingTop="4dp"
+                                        android:paddingBottom="4dp"
+                                        android:layout_marginRight="4dp"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/sp14_space"/>
+                                <View android:layout_width="0sp"
+                                      android:layout_height="match_parent"
+                                      android:layout_weight="0.2"/>
+                                <TextView
+                                        android:id="@+id/txt_rf_totals"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:textAlignment="center"
+                                        android:paddingTop="4dp"
+                                        android:paddingBottom="4dp"
+                                        android:layout_marginLeft="4dp"
+                                        android:layout_marginRight="4dp"
+                                        android:text="@string/payable"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="@dimen/sp14_space"/>
+
+
+                            </LinearLayout>
+
+
+                            <ScrollView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                    <android.support.v7.widget.RecyclerView
+                                            android:id="@+id/Recycler_instalments"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                    />
+
+                                </LinearLayout>
+
+                            </ScrollView>
+                        </LinearLayout>
+
+
+                    </HorizontalScrollView>
+                </LinearLayout>
+                <!--<LinearLayout-->
+                        <!--android:id="@+id/installment_layout"-->
+                        <!--android:visibility="visible"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_marginTop="@dimen/sp4_space"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--app:layout_constraintTop_toBottomOf="@+id/Recycler_receipts"-->
+                        <!--app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--app:layout_constraintStart_toStartOf="parent">-->
+
+                    <!--<HorizontalScrollView-->
+                            <!--android:id="@+id/horizont"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:fillViewport="true"-->
+                            <!--android:scrollbars="none"-->
+                            <!--app:layout_constraintEnd_toEndOf="parent"-->
+                            <!--app:layout_constraintStart_toStartOf="parent"-->
+                            <!--app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.0">-->
+
+                        <!--<LinearLayout-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:orientation="vertical">-->
+
+
+                            <!--<LinearLayout-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:background="@color/colorPrimary"-->
+                                    <!--android:gravity="center"-->
+                                    <!--android:minHeight="40dp"-->
+                                    <!--android:orientation="horizontal">-->
+
+                                <!--<TextView-->
+                                        <!--android:id="@+id/txt_rf_auction"-->
+                                        <!--android:layout_width="0dp"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:text="@string/auctionno"-->
+                                        <!--android:layout_marginLeft="4dp"-->
+                                        <!--android:layout_marginRight="4dp"-->
+                                        <!--android:textAlignment="center"-->
+                                        <!--android:textColor="@color/colorWhite"-->
+                                        <!--android:textSize="@dimen/sp14_space"/>-->
+
+                                <!--<TextView-->
+                                        <!--android:id="@+id/txt_rf_pendind"-->
+                                        <!--android:layout_width="0dp"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:textAlignment="center"-->
+                                        <!--android:text="@string/pending"-->
+                                        <!--android:layout_marginLeft="4dp"-->
+                                        <!--android:layout_marginRight="4dp"-->
+                                        <!--android:textColor="@color/colorWhite"-->
+                                        <!--android:textSize="@dimen/sp14_space"/>-->
+                                <!--<View android:layout_width="0sp" android:layout_height="match_parent"-->
+                                <!--/>-->
+                                <!--<TextView-->
+                                        <!--android:id="@+id/txt_rf_penalty"-->
+                                        <!--android:layout_width="0dp"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:textAlignment="center"-->
+                                        <!--android:layout_marginLeft="4dp"-->
+                                        <!--android:layout_marginRight="4dp"-->
+                                        <!--android:text="@string/penalty"-->
+                                        <!--android:textColor="@color/colorWhite"-->
+                                        <!--android:textSize="@dimen/sp14_space"/>-->
+                                <!--<View android:layout_width="0sp" android:layout_height="match_parent"-->
+                                <!--/>-->
+                                <!--<TextView-->
+                                        <!--android:id="@+id/txt_rf_bonus"-->
+                                        <!--android:layout_width="0dp"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:textAlignment="center"-->
+                                        <!--android:text="@string/bonus"-->
+                                        <!--android:layout_marginLeft="4dp"-->
+                                        <!--android:layout_marginRight="4dp"-->
+                                        <!--android:textColor="@color/colorWhite"-->
+                                        <!--android:textSize="@dimen/sp14_space"/>-->
+                                <!--<View android:layout_width="0sp"-->
+                                      <!--android:layout_height="match_parent"-->
+                                      <!--android:layout_weight="0.2"/>-->
+                                <!--<TextView-->
+                                        <!--android:id="@+id/txt_rf_totals"-->
+                                        <!--android:layout_width="0dp"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:textAlignment="center"-->
+                                        <!--android:layout_marginLeft="4dp"-->
+                                        <!--android:layout_marginRight="4dp"-->
+                                        <!--android:text="@string/payable"-->
+                                        <!--android:textColor="@color/colorWhite"-->
+                                        <!--android:textSize="@dimen/sp14_space"/>-->
+
+                            <!--</LinearLayout>-->
+
+
+                            <!--<android.support.v7.widget.RecyclerView-->
+                                    <!--android:id="@+id/Recycler_instalments"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="wrap_content"-->
+                            <!--/>-->
+
+
+                        <!--</LinearLayout>-->
+                    <!--</HorizontalScrollView>-->
+                <!--</LinearLayout>-->
+                <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/advance_layout"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        app:layout_constraintTop_toBottomOf="@+id/installment_layout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+
+                    <TextView
+                            android:text="0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/txt_rf_advanceamnt"
+                            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="@dimen/sp16_space"
+                            android:layout_marginEnd="@dimen/sp20_space" app:layout_constraintVertical_bias="0.0"
+                            android:textColor="@color/green_700"/>
+                    <TextView
+                            android:text="@string/advance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/textView15"
+                            app:layout_constraintEnd_toStartOf="@+id/txt_rf_advanceamnt"
+                            android:layout_marginEnd="@dimen/sp16_space"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt_rf_advanceamnt"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="@dimen/sp16_space"
+                            app:layout_constraintTop_toTopOf="@+id/txt_rf_advanceamnt"
+                            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="parent"
+                            android:textStyle="bold"/>
+
+
+                </android.support.constraint.ConstraintLayout>
+                <android.support.design.widget.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/receiptamntMAN"
+                        app:layout_constraintTop_toBottomOf="@+id/advance_layout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/fingerprintbox"
+                        android:id="@+id/edt_rf_rece" app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintVertical_bias="0">
+
+                    <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:ems="10"
+                            android:textSize="@dimen/sp14_space"
+                            android:textColor="@color/colorBlack"
+                            android:background="@drawable/edittext_nullbackground"
+                            android:id="@+id/edt_receiptamount"/>
+
+                </android.support.design.widget.TextInputLayout>
+                <Button
+                        android:layout_width="0sp"
+                        android:layout_height="0sp"
+                        android:text="@string/paymenttype"
+                        android:textColor="@color/colorBlack"
+                        android:background="@drawable/fingerprintbox"
+                        android:id="@+id/edt_paymenttype"
+                        android:layout_marginStart="@dimen/sp8_space"
+                        android:textSize="@dimen/sp14_space"
+                        app:layout_constraintStart_toEndOf="@+id/edt_rf_rece"
+                        app:layout_constraintTop_toTopOf="@+id/edt_rf_rece"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:drawableRight="@drawable/ic_spindown_black"
+                        app:layout_constraintBottom_toBottomOf="@+id/edt_rf_rece" android:layout_marginEnd="8dp"/>
+                <LinearLayout
+                        android:id="@+id/paymenttype_layouts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="@dimen/sp8_space"
+                        android:layout_marginEnd="@dimen/sp8_space"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_paymenttype"
+                        android:orientation="vertical">
+
+                    <EditText
+                            android:id="@+id/edt_re_debitto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/fingerprintbox"
+                            android:hint="Debit To "
+                            android:minHeight="40dp"
+                            android:inputType="text"
+                            android:visibility="gone"
+                            android:singleLine="true"
+                            android:textColor="@color/colorBlack"/>
+                    <LinearLayout
+                            android:id="@+id/lay_re_che_indiv"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                        <EditText
+                                android:id="@+id/edt_re_cheno_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:hint="Cheque No (mandatory)"
+                                android:minHeight="40dp"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:textColor="@color/colorBlack"/>
+
+
+                        <Button
+                                android:id="@+id/btn_che_date_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:minHeight="40dp"
+                                android:text="Cheque Date (mandatory)"
+                                android:textColor="@color/colorPrimary"/>
+
+
+                        <EditText
+                                android:id="@+id/edt_re_chebank_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:hint="Bank Name (mandatory)"
+                                android:minHeight="40dp"
+                                android:singleLine="true"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:textColor="@color/colorBlack"/>
+
+
+                        <EditText
+                                android:id="@+id/edt_re_chebranch_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:hint="Branch Name (mandatory)"
+                                android:minHeight="40dp"
+                                android:singleLine="true"
+                                android:textColor="@color/colorBlack"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/lay_re_dd_indiv"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                        <EditText
+                                android:id="@+id/edt_re_ddno_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:hint="D.D No (mandatory)"
+                                android:inputType="number"
+                                android:minHeight="40dp"
+                                android:singleLine="true"
+                                android:textColor="@color/colorBlack"/>
+
+
+                        <Button
+                                android:id="@+id/btn_dd_date_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:minHeight="40dp"
+                                android:text="D.D Date (mandatory)"
+                                android:textColor="@color/colorPrimary"/>
+
+
+                        <EditText
+                                android:id="@+id/edt_re_ddbank_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:hint="Bank Name (mandatory)"
+                                android:editable="false"
+                                android:focusable="false"
+                                android:minHeight="40dp"
+                                android:singleLine="true"
+                                android:textColor="@color/colorBlack"/>
+
+
+                        <EditText
+                                android:id="@+id/edt_re_ddbranch_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:hint="Branch Name (mandatory)"
+                                android:minHeight="40dp"
+                                android:singleLine="true"
+                                android:textColor="@color/colorBlack"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:id="@+id/lay_re_rtgs_indiv"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                        <EditText
+                                android:id="@+id/edt_re_rtgsno_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:hint="Transaction No (mandatory)"
+                                android:minHeight="40dp"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:textColor="@color/colorBlack"/>
+
+
+                        <Button
+                                android:id="@+id/btn_rtgs_date_indiv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/fingerprintbox"
+                                android:minHeight="40dp"
+                                android:text="Transaction Date (mandatory)"
+                                android:textColor="@color/colorPrimary"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <android.support.design.widget.TextInputLayout
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/str_ln_remarks"
+                        app:layout_constraintTop_toBottomOf="@+id/paymenttype_layouts"
+                        android:background="@drawable/fingerprintbox"
+                        android:id="@+id/edt_rf_rema"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/paymenttype_layouts"
+                        app:layout_constraintEnd_toEndOf="@+id/paymenttype_layouts"
+                        app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.0"
+                        android:layout_marginTop="8dp">
+
+                    <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textSize="@dimen/sp14_space"
+                            android:ems="10"
+                            android:textColor="@color/colorBlack" android:background="@drawable/edittext_nullbackground"
+                            android:id="@+id/edt_rf_remarks"/>
+
+                </android.support.design.widget.TextInputLayout>
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/generate_receipt"
+                        android:textColor="@color/colorWhite"
+                        android:background="@drawable/button_background"
+                        android:id="@+id/btn_generatereceipt"
+                        android:layout_marginTop="@dimen/sp14_space"
+                        app:layout_constraintEnd_toEndOf="@+id/edt_rf_rema"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_rf_rema"
+                        android:layout_marginStart="8dp"
+                        android:textSize="@dimen/sp14_space"
+                        android:padding="@dimen/sp4_space"
+                        app:layout_constraintStart_toStartOf="@+id/edt_rf_rema"
+                        app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="24dp"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </FrameLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
